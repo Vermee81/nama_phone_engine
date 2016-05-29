@@ -16,7 +16,6 @@ class Gpio:
         try:
             GPIO.output(IO_NO, True)
             self.state = 'on'
-            print "turn on"
         except KeyboardInterrupt:
             self.state = 'off'
 
@@ -24,7 +23,6 @@ class Gpio:
         try:
             GPIO.output(IO_NO, False)
             self.state = 'off'
-            print "turned off"
         except KeyboardInterrupt:
             self.state = 'on'
 
