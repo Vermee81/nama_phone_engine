@@ -34,17 +34,18 @@ def main():
     fuel_tank = tweet_crawl.fuel_tank
 
     while 1:
-        change_gpio_state(my_gpio, power_time)
 
         # 燃料供給
         power_time += fuel_tank.fuel
 	fuel_tank.fuel = 0
-        print "燃料供給後", power_time
 
         # 毎秒燃料は減っていく
 	if power_time > 0:
             power_time -= 1
             print "燃料減った後", power_time
+        
+        print "燃料供給後", power_time
+        change_gpio_state(my_gpio, power_time)
 
         time.sleep(1)
 
